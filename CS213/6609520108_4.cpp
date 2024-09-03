@@ -12,4 +12,5 @@ int main(int argc, char **argv){
  cout << x << " " << *x << endl;
  cout << a << " " << b << endl; 
  return 0;
+ 
 }
