@@ -15,3 +15,4 @@ int main(int argc, char **argv){
  cout << x << endl;
  cout << *x << endl;
  return 0;
+}
