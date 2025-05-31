@@ -1,28 +1,24 @@
 package exercise1;
 
 public class Game {
-
-    //Main Class
     public static void main(String[] args) {
-        //main method
-        // Run | Debug
-        //create an object from class Person
+        // สร้างอ็อบเจ็กต์จากคลาส Person
         Person me = new Person();
 
-        //set my first name as the name of me
-        me.setName("ชื่อนักศึกษาของคุณ"); // เปลี่ยนตรงนี้เป็นชื่อนักศึกษาของคุณ
+        // ตั้งค่าชื่อ
+        me.setName("AriyaTangrojanakul");
 
-        //set score to 10 for object me
+        // ตั้งค่าคะแนน
         me.setScore(10);
 
-        //move me to position x = 10, position y = 50
+        // ย้ายตำแหน่ง
         me.move(10, 50);
 
-        //print detail of object me : name, score
-        System.out.println("name: " + me.getName());
-        System.out.println("score: " + me.getScore());
+        // แสดงผลรายละเอียด
+        System.out.println("Name: " + me.getName());
+        System.out.println("Score: " + me.getScore());
 
-        //print position x, position y
+        // แสดงตำแหน่ง
         me.showPosition();
     }
 }
