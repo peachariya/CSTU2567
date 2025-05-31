@@ -1,22 +1,26 @@
+# Architectural Diagram ของระบบเว็บแอปพลิเคชัน
+
+นี่คือไดอะแกรมสถาปัตยกรรมของระบบเว็บแอปพลิเคชันของเรา:
+
 ```mermaid
 graph TD
     subgraph "ผู้ใช้งาน (Internet User)"
-        User[<i class='fa fa-user'></i> ผู้ใช้งาน]
+        User[fa:fa-user ผู้ใช้งาน]
     end
 
     subgraph "AWS Cloud"
         subgraph "VPC (Virtual Private Cloud)"
-            IGW[<i class='fa fa-cloud'></i> Internet Gateway]
+            IGW[fa:fa-cloud Internet Gateway]
 
             subgraph "Region"
-                ALB[<i class='fa fa-balance-scale'></i> Application Load Balancer (ALB)]
-                ASG[<i class='fa fa-users'></i> Auto Scaling Group (ASG)]
+                ALB[fa:fa-balance-scale Application Load Balancer (ALB)]
+                ASG[fa:fa-users Auto Scaling Group (ASG)]
 
                 subgraph "Availability Zone A"
                     style AZ_A fill:#E6F3FF,stroke:#007bff,stroke-width:2px
                     PublicSubnetA[Public Subnet A]
-                    EC2_A1[<i class='fa fa-server'></i> EC2 Instance]
-                    EC2_A2[<i class='fa fa-server'></i> EC2 Instance]
+                    EC2_A1[fa:fa-server EC2 Instance]
+                    EC2_A2[fa:fa-server EC2 Instance]
                     PublicSubnetA -.-> EC2_A1
                     PublicSubnetA -.-> EC2_A2
                 end
@@ -24,8 +28,8 @@ graph TD
                 subgraph "Availability Zone B"
                     style AZ_B fill:#E6F3FF,stroke:#007bff,stroke-width:2px
                     PublicSubnetB[Public Subnet B]
-                    EC2_B1[<i class='fa fa-server'></i> EC2 Instance]
-                    EC2_B2[<i class='fa fa-server'></i> EC2 Instance]
+                    EC2_B1[fa:fa-server EC2 Instance]
+                    EC2_B2[fa:fa-server EC2 Instance]
                     PublicSubnetB -.-> EC2_B1
                     PublicSubnetB -.-> EC2_B2
                 end
@@ -33,16 +37,16 @@ graph TD
                 subgraph "Availability Zone C"
                     style AZ_C fill:#E6F3FF,stroke:#007bff,stroke-width:2px
                     PublicSubnetC[Public Subnet C]
-                    EC2_C1[<i class='fa fa-server'></i> EC2 Instance]
-                    EC2_C2[<i class='fa fa-server'></i> EC2 Instance]
+                    EC2_C1[fa:fa-server EC2 Instance]
+                    EC2_C2[fa:fa-server EC2 Instance]
                     PublicSubnetC -.-> EC2_C1
                     PublicSubnetC -.-> EC2_C2
                 end
             end
 
             %% Security Groups
-            SG_ALB[<i class='fa fa-shield-alt'></i> Security Group (ALB)]
-            SG_EC2[<i class='fa fa-shield-alt'></i> Security Group (EC2)]
+            SG_ALB[fa:fa-shield-alt Security Group (ALB)]
+            SG_EC2[fa:fa-shield-alt Security Group (EC2)]
 
             %% Connections and Traffic Flow
             User -- HTTP/HTTPS Traffic --> IGW
